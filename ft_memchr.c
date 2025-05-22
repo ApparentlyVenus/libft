@@ -6,7 +6,7 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 21:19:06 by odana             #+#    #+#             */
-/*   Updated: 2025/05/21 16:54:31 by odana            ###   ########.fr       */
+/*   Updated: 2025/05/22 09:32:16 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			return ((void *) s + i);
 		i++;
 	}

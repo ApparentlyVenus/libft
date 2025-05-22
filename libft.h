@@ -6,7 +6,7 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 22:16:56 by odana             #+#    #+#             */
-/*   Updated: 2025/05/21 15:59:26 by odana            ###   ########.fr       */
+/*   Updated: 2025/05/22 09:28:57 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *str, size_t n);
-void			*calloc(size_t n, size_t size);
+void			*ft_calloc(size_t n, size_t size);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
+char			*ft_itoa(int n);
 void			*ft_memchr(const void *str, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);

@@ -6,7 +6,7 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 20:25:40 by odana             #+#    #+#             */
-/*   Updated: 2025/05/21 17:03:45 by odana            ###   ########.fr       */
+/*   Updated: 2025/05/22 09:52:49 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	while (*str)
-		str++;
+	const char	*last = NULL;
+
 	while (*str)
 	{
-		if (*str == c)
-			return ((char *)str);
-		str--;
+		if (*str == (char)c)
+			last = str;
+		str++;
 	}
-	return (NULL);
+	if (*str == (char)c)
+		last = str;
+	return ((char *)last);
 }

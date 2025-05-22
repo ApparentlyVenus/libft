@@ -6,7 +6,7 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 22:52:54 by odana             #+#    #+#             */
-/*   Updated: 2025/05/21 16:42:44 by odana            ###   ########.fr       */
+/*   Updated: 2025/05/22 12:56:52 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char	*ft_itoa(int n)
 	result = malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (0);
+	result[len] = '\0';
 	if (nbr == 0)
 		result[0] = '0';
 	if (nbr < 0)
