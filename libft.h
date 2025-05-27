@@ -6,7 +6,7 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 22:16:56 by odana             #+#    #+#             */
-/*   Updated: 2025/05/24 20:46:18 by odana            ###   ########.fr       */
+/*   Updated: 2025/05/27 07:38:45 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include<stdlib.h>
 # include<unistd.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -36,9 +37,14 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *str, int c, size_t n);
+size_t	ft_numlen(long n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
+int		ft_puthex_lower_fd(unsigned long n, int fd);
+int		ft_puthex_upper_fd(unsigned long n, int fd);
+void	ft_putnbr_base(int nbr, char *base);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_unsigned_fd(unsigned int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *str, int c);

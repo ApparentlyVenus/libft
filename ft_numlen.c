@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 22:52:54 by odana             #+#    #+#             */
-/*   Updated: 2025/05/23 09:04:38 by odana            ###   ########.fr       */
+/*   Created: 2025/05/23 09:03:03 by odana             #+#    #+#             */
+/*   Updated: 2025/05/23 09:03:14 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_itoa(int n)
+size_t	ft_numlen(long n)
 {
-	int			len;
-	char		*result;
-	const char	*digits = "0123456789";
-	long		nbr;
+	size_t	len;
 
-	nbr = n;
-	len = ft_numlen(nbr);
-	result = malloc(sizeof(char) * (len + 1));
-	if (!result)
-		return (0);
-	result[len] = '\0';
-	if (nbr == 0)
-		result[0] = '0';
-	if (nbr < 0)
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
-		result[0] = '-';
-		nbr *= -1;
+		len++;
+		n *= -1;
 	}
-	while (nbr > 0)
+	while (n)
 	{
-		result[--len] = digits[nbr % 10];
-		nbr /= 10;
+		n /= 10;
+		len++;
 	}
-	return (result);
+	return (len);
 }

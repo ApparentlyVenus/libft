@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_puthex_lower_fd.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/19 19:40:45 by odana             #+#    #+#             */
-/*   Updated: 2025/05/24 21:55:39 by odana            ###   ########.fr       */
+/*   Created: 2025/05/24 22:19:06 by odana             #+#    #+#             */
+/*   Updated: 2025/05/26 07:18:55 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_puthex_lower_fd(unsigned long n, int fd)
 {
-	char		*c_dest;
-	const char	*c_src;
+	int			count;
+	const char	*base = "0123456789abcdef";
 
-	if (src == dst)
-		return (dst);
-	c_dest = (char *)dst;
-	c_src = (const char *)src;
-	if (c_src < c_dest && c_src + len > c_dest)
-		while (len--)
-			*(c_dest + len) = *(c_src + len);
-	else
-	{
-		while (len--)
-		{
-			*c_dest = *c_src;
-			c_dest++;
-			c_src++;
-		}
-	}
-	return (dst);
+	count = 0;
+	if (n >= 16)
+		count += ft_puthex_lower_fd(n / 16, fd);
+	ft_putchar_fd(base[n % 16], fd);
+	count++;
+	return (count);
 }
